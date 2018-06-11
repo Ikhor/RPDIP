@@ -26,7 +26,7 @@ In this package, the filter classes were grouped in the same way as in the Serve
 
 ![](https://d2mxuefqeaa7sj.cloudfront.net/s_037C369A33F24C227CA22208365D4AFFB446CA165FC7B9028A0BA01F3413B3A8_1528728418522_file.png)
 
-his package contains the classes and interfaces essential for the operation of the image processing on the server. The project has three classes and two interfaces.
+This package contains the classes and interfaces essential for the operation of the image processing on the server. The project has three classes and two interfaces.
 The first interface to be addressed remoteFilters, this interface is necessary due to the use of RMI, since we must define in advance which are the remote processing methods to be implemented on the server. In this interface, we have three types of calls: the filter call, in which the remote filter is invoked that the client wants to use, the processing model, where the client determines what kind of processing he wants (which can be Local, Thread or Open MP). And finally (if it is Thread), the amount of thread pool you want.
 The second interface deals with the required methods if you want to implement a new filter. In this way it is necessary to implement two functions: Apply and getBoundaries, the second being an abstract method. Therefore, if you want to develop a new filter, you should follow the following format:
 public abstract ArrayList <ImageComponent> apply (ImageComponent image);
